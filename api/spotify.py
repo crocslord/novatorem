@@ -75,7 +75,7 @@ def barGen(barCount):
     barCSS = ""
     left = 1
     for i in range(1, barCount + 1):
-        anim = random.randint(1000, 1350)
+        anim = random.randint(1000, 3200)
         barCSS += (
             ".bar:nth-child({})  {{ left: {}px; animation-duration: {}ms; }}".format(
                 i, left, anim
@@ -101,20 +101,20 @@ def loadImageB64(url):
 
 
 def makeSVG(data, background_color, border_color):
-    barCount = 84
+    barCount = 0
     contentBar = "".join(["<div class='bar'></div>" for i in range(barCount)])
     barCSS = barGen(barCount)
 
     if data == {} or data["item"] == "None" or data["item"] is None:
-        # contentBar = "" #Shows/Hides the EQ bar if no song is currently playing
-        currentStatus = "Was playing:"
+        #contentBar = "" #Shows/Hides the EQ bar if no song is currently playing
+        currentStatus = "Was listening to:"
         recentPlays = recentlyPlayed()
         recentPlaysLength = len(recentPlays["items"])
         itemIndex = random.randint(0, recentPlaysLength - 1)
         item = recentPlays["items"][itemIndex]["track"]
     else:
         item = data["item"]
-        currentStatus = "Vibing to:"
+        currentStatus = "Listening to:"
 
     if item["album"]["images"] == []:
         image = PLACEHOLDER_IMAGE
