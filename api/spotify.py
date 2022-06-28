@@ -128,12 +128,12 @@ def makeSVG(data, background_color, border_color):
     dataDict = {
         "contentBar": contentBar,
         "barCSS": barCSS,
-        "artistName": artistName,
+        #"artistName": artistName,
         "songName": songName,
         "songURI": songURI,
         "artistURI": artistURI,
         "image": image,
-        "status": currentStatus,
+        #"status": currentStatus,
         "background_color": background_color,
         "border_color": border_color
     }
